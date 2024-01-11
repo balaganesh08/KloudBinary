@@ -34,7 +34,7 @@
                             <li><a href="services.html">Services</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact_us.html">Contact Us</a></li>
-                            <li class="btnll"><button class="btn btn-sm btn-primary">Login / Sign Up</button></li>
+                            <li class="btnll"><button id="getQuoteBtn" class="btn btn-sm btn-primary">Get Quote</button></li>
                         </ul>
                     </div>
                 </div>
@@ -53,8 +53,9 @@
                       <p>As pioneers in the industry, 
                         we bring you unparalleled CloudOps and DevOps solutions designed to elevate your digital infrastructure to new heights.</p>
                     <div class="btn-row row">
-                       <button class="btn btn-primary">Read More</button>
-                       <button class="btn btn-outline-primary">Create Account</button>
+                        <a href="services.html" class="btn btn-primary">Read More</a>
+                        <a href="contact_us.html" class="btn btn-outline-primary" id="getQuoteBtn">Get Quote</a>
+                        
                    </div>
                </div>
                <div class="col-md-6 banner-img">
@@ -292,7 +293,45 @@
 </div>
 </section> -->
 
+<!--***************************  Get Quote Form *******************************************************-->
 
+
+<div id="quoteFormPopup">
+    <span class="close" onclick="closeForm()">&times;</span>
+    <h1>Request a Quotation</h1>
+    <form action="submit_quotation.php" method="post">
+        <label for="customerName">Your Name:</label>
+        <input type="text" id="customerName" name="customerName" required>
+
+        <br>
+
+        <label for="customerEmail">Your Email:</label>
+        <input type="email" id="customerEmail" name="customerEmail" required>
+
+        <br>
+
+        <label for="customerPhone">Your Phone Number:</label>
+        <input type="tel" id="customerPhone" name="customerPhone" required>
+
+        <br>
+
+        <label for="quotationMessage">Quotation Message:</label>
+        <textarea id="quotationMessage" name="quotationMessage" rows="4" required></textarea>
+
+        <br>
+
+        <button type="submit">Submit Quotation Request</button>
+    </form>
+</div>
+
+<script >document.getElementById('getQuoteBtn').addEventListener('click', function() {
+document.getElementById('quoteFormPopup').style.display = 'block';
+});
+
+function closeForm() {
+document.getElementById('quoteFormPopup').style.display = 'none';
+}
+</script>
 
 
 <!--********************************* Footer Starts Here ********************************************-->
@@ -303,10 +342,61 @@
         <div class="row">
             <p>
                 Looking for a Cloud & DevOps As A Service consultant for your business?
-                <button class="btn btn-default">Get Quote</button>
+                <button id="openModalBtn" class="btn btn-default">Get Quote</button>
             </p>
         </div>
     </div>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <!-- Your form content goes here -->
+            <form>
+                <!-- Your form fields go here -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="service">Service Required:</label>
+                <select id="service" name="service" required>
+                    <option value="cloud">Cloud Services</option>
+                    <option value="devops">DevOps</option>
+                    <!-- Add more options as needed -->
+                </select>
+    
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    
+    <script > document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('myModal');
+        var openModalBtn = document.getElementById('openModalBtn');
+        var closeModalBtn = document.getElementById('closeModalBtn');
+    
+        openModalBtn.onclick = function() {
+            modal.style.display = 'block';
+        }
+    
+        closeModalBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    });
+    </script>
 </div>
 
 <footer>

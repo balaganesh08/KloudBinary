@@ -33,7 +33,7 @@
                             <li><a href="services.html">Services</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact_us.html">Contact Us</a></li>
-                            <li class="btnll"><button class="btn btn-sm btn-primary">Login / Sign Up</button></li>
+                            <li class="btnll"><button class="btn btn-sm btn-primary">Get Quote</button></li>
                         </ul>
                     </div>
                 </div>
@@ -160,16 +160,66 @@
 
 <!--********************************* Footer Starts Here ********************************************-->
 
-
 <div class="footer-ablove">
     <div class="container">
         <div class="row">
             <p>
                 Looking for a Cloud & DevOps As A Service consultant for your business?
-                <button class="btn btn-default">Get Quote</button>
+                <button id="openModalBtn" class="btn btn-default">Get Quote</button>
             </p>
         </div>
     </div>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <!-- Your form content goes here -->
+            <form>
+                <!-- Your form fields go here -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="service">Service Required:</label>
+                <select id="service" name="service" required>
+                    <option value="cloud">Cloud Services</option>
+                    <option value="devops">DevOps</option>
+                    <!-- Add more options as needed -->
+                </select>
+    
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    
+    <script > document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('myModal');
+        var openModalBtn = document.getElementById('openModalBtn');
+        var closeModalBtn = document.getElementById('closeModalBtn');
+    
+        openModalBtn.onclick = function() {
+            modal.style.display = 'block';
+        }
+    
+        closeModalBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    });
+    </script>
 </div>
 
 <footer>
