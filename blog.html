@@ -13,34 +13,14 @@
 
 <body>
     <!-- ***************************** Head Starts Here *********************************-->
-    <div class="head-cover">
-         <header id="menu-jk" class="container-fluid">
-            <div class="container">
-                <div class="row head-ro">
-                    <div class="col-md-3 logo">
-                        <img style="padding-top: 12px; max-width: 130px;" src="assets/images/KB1.png" alt="">
-                          
-
-                                 <a class="d-md-none small-menu" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-
-                                <i class="fas d-lg-none  fa-bars"></i>
-                           </a>
-                    </div>
-                    <div id="collapseExample" class="col-md-9  nav">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about_us.html">About Us</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact_us.html">Contact Us</a></li>
-                            <li class="btnll"><button class="btn btn-sm btn-primary">Get Quote</button></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </header>
-    </div>
+    <script>
+        // Fetch and inject the header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(headerHtml => {
+                document.body.insertAdjacentHTML('afterbegin', headerHtml);
+            });
+    </script>
 
     <!--  ************************* Page Title Starts Here ************************** -->
 <div class="page-nav no-margin row">
@@ -160,156 +140,17 @@
 
 <!--********************************* Footer Starts Here ********************************************-->
 
-<div class="footer-ablove">
-    <div class="container">
-        <div class="row">
-            <p>
-                Looking for a Cloud & DevOps As A Service consultant for your business?
-                <button id="openModalBtn" class="btn btn-default">Get Quote</button>
-            </p>
-        </div>
-    </div>
-    
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModalBtn">&times;</span>
-            <!-- Your form content goes here -->
-            <form>
-                <!-- Your form fields go here -->
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-    
-                <label for="mobile">Mobile Number:</label>
-                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-    
-                <label for="service">Service Required:</label>
-                <select id="service" name="service" required>
-                    <option value="cloud">Cloud Services</option>
-                    <option value="devops">DevOps</option>
-                    <!-- Add more options as needed -->
-                </select>
-    
-                <label for="comments">Comments:</label>
-                <textarea id="comments" name="comments" rows="4"></textarea>
-                
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
-    
-    <script > document.addEventListener('DOMContentLoaded', function() {
-        var modal = document.getElementById('myModal');
-        var openModalBtn = document.getElementById('openModalBtn');
-        var closeModalBtn = document.getElementById('closeModalBtn');
-    
-        openModalBtn.onclick = function() {
-            modal.style.display = 'block';
-        }
-    
-        closeModalBtn.onclick = function() {
-            modal.style.display = 'none';
-        }
-    
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-    });
-    </script>
-</div>
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 about">
-                <h2>About Us</h2>
-                <p>KLOUD BINARY TECHNOLOGIES PVT LTD <br>
-                    Cloud & DevOps As A Service</p>
-                
-                <div class="foot-address">
-                    <div class="icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="addet">
-                        WeWork Rajapushpa Summit, SY. 130P & 115/1P, Financial District, RR Dist, TS-500032
-                    </div>
-                </div>
-                <div class="foot-address">
-                    <div class="icon">
-                        <i class="far fa-envelope-open"></i>
-                    </div>
-                    <div class="addet">
-                        info@kloudbinary.com
-                    </div>
-                </div>
-                <div class="foot-address">
-                    <div class="icon">
-                       <i class="fas fa-mobile-alt"></i>
-                   </div>
-                   <div class="addet">
-                    +91 90000 13309
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 fotblog">
-            <h2>From latest Blog</h2>
-            <div class="blohjb">
-                <p>Explore the Power of AWS: Leveraging Cloud Solutions for Enhanced Scalability and Performance</p>
-               
-            </div>
-            <div class="blohjb">
-                <p>Demystifying DevOps: Streamlining Software Development for Optimal Efficiency and Collaboration</p>
-              
-            </div>
-            <div class="blohjb">
-                <p>Implementing DevOps Best Practices: A Step-by-Step Guide to Accelerate Your Development Lifecycle</p>
-                
-            </div>
-        </div>
-        
-        <div class="col-md-3 glink">
-            <ul>
-                <li><a href="index.html"><i class="fas fa-angle-double-right"></i>Home</a></li>
-                <li><a href="about_us.html"><i class="fas fa-angle-double-right"></i>About Us</a></li>
-                <li><a href="services.html"><i class="fas fa-angle-double-right"></i>Services</a></li>
-                <li><a href="blog.html"><i class="fas fa-angle-double-right"></i>Blog</a></li>
-                <li><a href="pricing.html"><i class="fas fa-angle-double-right"></i>Gallery</a></li>
-                <li><a href="contact_us.html"><i class="fas fa-angle-double-right"></i>Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="col-md-3 tags">
-            <h2>Easy Tags</h2>
-            <ul>
-                <li>Cloud</li>
-                <li>Web Development</li>
-                <li>DevOps</li>
-                <li>Angular</li>
-                <li>Python</li>
-                <li>AWS</li>
-                <li>AWS DEVOPS Services</li>
-            </ul>
-        </div>
-    </div>
-</div>
-</footer>
-<div class="copy">
-    <div class="container">
-        <a href="  ">2023 &copy; All Rights Reserved | Developed by Kloud Binary</a>
-        <span>
-            <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            
-        </span>
-    </div>
-</div>
 
+<script>
+
+    // Fetch and inject the footer
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(footerHtml => {
+            document.body.insertAdjacentHTML('beforeend', footerHtml);
+        });
+</script>
 
 
 </body>

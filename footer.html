@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Popup Form Example</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/plugins/testimonial/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/plugins/testimonial/css/owl.theme.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Add your desired styles for the popup and overlay */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        /* Add your other styles as needed */
+    </style>
+</head>
+
+<body>
+    <div class="footer-ablove">
+        <div class="container">
+            <div class="row">
+                <p>
+                    Looking for a Cloud & DevOps As A Service consultant for your business?
+                    <button class="btn btn-default" id="loadPopupBtn">Get Quote</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="quotePopup"></div>
+
+    <script>
+        // Load popup content when the button is clicked
+        document.getElementById('loadPopupBtn').addEventListener('click', function () {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('quotePopup').innerHTML = xhr.responseText;
+                    document.getElementById('quotePopup').style.display = 'block';
+                }
+            };
+            xhr.open('GET', 'popup.html', true);
+            xhr.send();
+        });
+
+        // Close the popup when the close button is clicked
+        document.body.addEventListener('click', function (event) {
+            if (event.target.id === 'closePopup') {
+                document.getElementById('quotePopup').style.display = 'none';
+            }
+        });
+    </script>
+
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 about">
+                    <h2>About Us</h2>
+                    <p>KLOUD BINARY TECHNOLOGIES PVT LTD <br>
+                        Cloud & DevOps As A Service</p>
+                    
+                    <div class="foot-address">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="addet">
+                            WeWork Rajapushpa Summit, SY. 130P & 115/1P, Financial District, RR Dist, TS-500032
+                        </div>
+                    </div>
+                    <div class="foot-address">
+                        <div class="icon">
+                            <i class="far fa-envelope-open"></i>
+                        </div>
+                        <div class="addet">
+                            info@kloudbinary.com
+                        </div>
+                    </div>
+                    <div class="foot-address">
+                        <div class="icon">
+                           <i class="fas fa-mobile-alt"></i>
+                       </div>
+                       <div class="addet">
+                        +91 90000 13309
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fotblog">
+                <h2>From latest Blog</h2>
+                <div class="blohjb">
+                    <p>Explore the Power of AWS: Leveraging Cloud Solutions for Enhanced Scalability and Performance</p>
+                   
+                </div>
+                <div class="blohjb">
+                    <p>Demystifying DevOps: Streamlining Software Development for Optimal Efficiency and Collaboration</p>
+                  
+                </div>
+                <div class="blohjb">
+                    <p>Implementing DevOps Best Practices: A Step-by-Step Guide to Accelerate Your Development Lifecycle</p>
+                    
+                </div>
+            </div>
+            
+            <div class="col-md-3 glink">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="about_us.html"><i class="fas fa-angle-double-right"></i>About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-angle-double-right"></i>Services</a></li>
+                    <li><a href="blog.html"><i class="fas fa-angle-double-right"></i>Blog</a></li>
+                    <li><a href="pricing.html"><i class="fas fa-angle-double-right"></i>Gallery</a></li>
+                    <li><a href="contact_us.html"><i class="fas fa-angle-double-right"></i>Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 tags">
+                <h2>Easy Tags</h2>
+                <ul>
+                    <li>Cloud</li>
+                    <li>Web Development</li>
+                    <li>DevOps</li>
+                    <li>Angular</li>
+                    <li>Python</li>
+                    <li>AWS</li>
+                    <li>AWS DEVOPS Services</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </footer>
+ 
+    <div class="copy">
+        <div class="container" style="
+       
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        ">
+            <a href="">2024 &copy; All Rights Reserved | Developed by KLOUD BINARY TECHNOLOGIES PVT LTD
+            </a>
+        <!--    <span>
+                <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                
+            </span> -->  
+        </div>
+    </div>
+    
+
+</body>
+</html>
