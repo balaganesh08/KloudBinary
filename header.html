@@ -34,7 +34,16 @@
                             <li><a href="services.html">Services</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact_us.html">Contact Us</a></li>
-                            <li class="btnll"><button id="quotePopup" class="btn btn-sm btn-primary">Get Quote</button></li>
+                            <li class="btnll"> <button onclick="openPopup()">Get Quote</button>
+
+                                <!-- Include the popup -->
+                                <script>
+                                  function openPopup() {
+                                    document.getElementById('popupContainer').style.display = 'flex';
+                                  }
+                                </script>
+                                <link rel="stylesheet" href="styles.css">
+                                <script src="popup.html"></script></li>
                         </ul>
                     </div>
                 </div>
